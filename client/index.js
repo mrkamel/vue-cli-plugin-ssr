@@ -1,4 +1,6 @@
-export function loadAsyncComponents ({ router }) {
+export function loadAsyncComponents (obj) {
+  var router = obj.router
+
   // Get matched components by route and load them
   var path = getLocation(router.options.base)
   var resolveComponents = flatMapComponents(router.match(path), function (Component, _, match, key, index) {
